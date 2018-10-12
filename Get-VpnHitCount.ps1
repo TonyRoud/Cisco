@@ -4,8 +4,8 @@
     $groups = foreach ($line in $hits){ Get-AltGroupID -line $line }
 #>
 
-$networks = Import-Csv "H:\Tickets\WBAC\5262785 - VPN Investigation\netdetails.csv" | sort location,source -Unique
-$hits = get-content "h:\Tickets\WBAC\5262785 - VPN Investigation\proxy_list_Oct.log"
+$networks = Import-Csv "netdetails.csv" | sort location,source -Unique
+$hits = get-content "huts.log"
 $regex = "Group = (.*?), IP"
 
 function Get-AltGroupId {
